@@ -18,10 +18,24 @@ async function quantidadeDeUsuarios(){
         }
     ]
 
+    const layout ={
+        plot_bgcolor:getCSS(' --cor-de-fundo'),
+        paper_bgcolor:('--cor-de-fundo'),
+        title:{
+            text:'redes sociais com mais usuarios no mundo',
+            x: 0,
+            font:{
+                color: getCSS('--cor-primaria'),
+                family:getCSS('--font'),
+                size:30
+            }
+
+        }
+    }
     const grafico = document.createElement('div');
     grafico.className = 'grafico';
     document.getElementById('graficos-container').appendChild(grafico);
-    Plotly.newPlot(grafico, infos);
+    Plotly.newPlot(grafico, infos,layout);
 
 }
 
